@@ -1,0 +1,17 @@
+server:
+  port: 9988
+spring:
+  application:
+    name: ZUUL-PROXY
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+zuul:
+  routes:
+    stu:
+      path: /stu-pro/**
+      service-id: STUDENT-PROVIDER
+    stu1:
+      path: /stu-con/**
+      service-id: STUDENT-CONSUMER
